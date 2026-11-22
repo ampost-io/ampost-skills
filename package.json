@@ -1,0 +1,27 @@
+{
+  "name": "ampost-skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ampost plugin marketplace for Claude Code, and Agent Skills for Codex, Cursor and other agents: post, schedule, repurpose and report on social media through the Ampost MCP server",
+  "license": "MIT",
+  "homepage": "https://ampost.io/docs/mcp?ref=github",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ampost-io/ampost-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ampost-io/ampost-skills/issues"
+  },
+  "author": {
+    "name": "Ampost",
+    "email": "support@ampost.io"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "validate": "claude plugin validate --strict ."
+  }
+}

@@ -1,0 +1,656 @@
+{
+  "server": "https://api.ampost.io/mcp",
+  "tools": [
+    {
+      "name": "accounts_connect",
+      "scope": "accounts:write",
+      "readOnly": false,
+      "arguments": [
+        "accountId",
+        "expectedPlatformAccountId",
+        "expectedUsername",
+        "idempotencyKey",
+        "platform",
+        "platformSetId",
+        "redirectUrl",
+        "state"
+      ],
+      "required": []
+    },
+    {
+      "name": "accounts_connect_status",
+      "scope": "accounts:read",
+      "readOnly": true,
+      "arguments": [
+        "connectRequestId"
+      ],
+      "required": [
+        "connectRequestId"
+      ]
+    },
+    {
+      "name": "accounts_disconnect",
+      "scope": "accounts:write",
+      "readOnly": false,
+      "arguments": [
+        "accountId"
+      ],
+      "required": [
+        "accountId"
+      ]
+    },
+    {
+      "name": "accounts_get",
+      "scope": "accounts:read",
+      "readOnly": true,
+      "arguments": [
+        "accountId"
+      ],
+      "required": [
+        "accountId"
+      ]
+    },
+    {
+      "name": "accounts_list",
+      "scope": "accounts:read",
+      "readOnly": true,
+      "arguments": [
+        "limit",
+        "offset",
+        "platform",
+        "platformSetId",
+        "status"
+      ],
+      "required": []
+    },
+    {
+      "name": "accounts_list_boards",
+      "scope": "accounts:read",
+      "readOnly": true,
+      "arguments": [
+        "accountId"
+      ],
+      "required": [
+        "accountId"
+      ]
+    },
+    {
+      "name": "accounts_set_analytics",
+      "scope": "accounts:write",
+      "readOnly": false,
+      "arguments": [
+        "accountId",
+        "enabled"
+      ],
+      "required": [
+        "accountId",
+        "enabled"
+      ]
+    },
+    {
+      "name": "accounts_set_board",
+      "scope": "accounts:write",
+      "readOnly": false,
+      "arguments": [
+        "accountId",
+        "boardId",
+        "newBoardName"
+      ],
+      "required": [
+        "accountId"
+      ]
+    },
+    {
+      "name": "analytics_followers",
+      "scope": "analytics:read",
+      "readOnly": true,
+      "arguments": [
+        "accountId",
+        "from",
+        "limit",
+        "offset",
+        "platform",
+        "platformSetId",
+        "to"
+      ],
+      "required": []
+    },
+    {
+      "name": "analytics_overview",
+      "scope": "analytics:read",
+      "readOnly": true,
+      "arguments": [
+        "accountId",
+        "from",
+        "platform",
+        "platformSetId",
+        "to"
+      ],
+      "required": []
+    },
+    {
+      "name": "analytics_posts",
+      "scope": "analytics:read",
+      "readOnly": true,
+      "arguments": [
+        "accountId",
+        "limit",
+        "offset",
+        "platform",
+        "platformSetId",
+        "postId"
+      ],
+      "required": []
+    },
+    {
+      "name": "docs_search",
+      "scope": null,
+      "readOnly": true,
+      "arguments": [
+        "limit",
+        "query"
+      ],
+      "required": [
+        "query"
+      ]
+    },
+    {
+      "name": "feedback_submit",
+      "scope": null,
+      "readOnly": false,
+      "arguments": [
+        "browser",
+        "error",
+        "idempotencyKey",
+        "kind",
+        "message",
+        "recentRequests",
+        "request",
+        "route",
+        "screenshot"
+      ],
+      "required": [
+        "kind",
+        "message"
+      ]
+    },
+    {
+      "name": "media_upload_create",
+      "scope": "media:write",
+      "readOnly": false,
+      "arguments": [
+        "fileName"
+      ],
+      "required": []
+    },
+    {
+      "name": "media_upload_status",
+      "scope": "media:write",
+      "readOnly": true,
+      "arguments": [
+        "uploadId"
+      ],
+      "required": [
+        "uploadId"
+      ]
+    },
+    {
+      "name": "platform_sets_create",
+      "scope": "accounts:write",
+      "readOnly": false,
+      "arguments": [
+        "idempotencyKey",
+        "name"
+      ],
+      "required": [
+        "name"
+      ]
+    },
+    {
+      "name": "platform_sets_delete",
+      "scope": "accounts:write",
+      "readOnly": false,
+      "arguments": [
+        "platformSetId"
+      ],
+      "required": [
+        "platformSetId"
+      ]
+    },
+    {
+      "name": "platform_sets_get",
+      "scope": "accounts:read",
+      "readOnly": true,
+      "arguments": [
+        "platformSetId"
+      ],
+      "required": [
+        "platformSetId"
+      ]
+    },
+    {
+      "name": "platform_sets_list",
+      "scope": "accounts:read",
+      "readOnly": true,
+      "arguments": [
+        "limit",
+        "offset"
+      ],
+      "required": []
+    },
+    {
+      "name": "platform_sets_update",
+      "scope": "accounts:write",
+      "readOnly": false,
+      "arguments": [
+        "name",
+        "platformSetId"
+      ],
+      "required": [
+        "name",
+        "platformSetId"
+      ]
+    },
+    {
+      "name": "platforms_list",
+      "scope": "posts:read",
+      "readOnly": true,
+      "arguments": [
+        "limit",
+        "offset"
+      ],
+      "required": []
+    },
+    {
+      "name": "posts_create",
+      "scope": "posts:write",
+      "readOnly": false,
+      "arguments": [
+        "firstComment",
+        "idempotencyKey",
+        "linkUrl",
+        "media",
+        "mediaFit",
+        "metadata",
+        "options",
+        "publishNow",
+        "scheduledFor",
+        "targets",
+        "text",
+        "thread",
+        "useQueue"
+      ],
+      "required": [
+        "targets"
+      ]
+    },
+    {
+      "name": "posts_delete",
+      "scope": "posts:write",
+      "readOnly": false,
+      "arguments": [
+        "postId"
+      ],
+      "required": [
+        "postId"
+      ]
+    },
+    {
+      "name": "posts_edit_published",
+      "scope": "posts:write",
+      "readOnly": false,
+      "arguments": [
+        "accountIds",
+        "postId",
+        "text"
+      ],
+      "required": [
+        "postId",
+        "text"
+      ]
+    },
+    {
+      "name": "posts_get",
+      "scope": "posts:read",
+      "readOnly": true,
+      "arguments": [
+        "postId"
+      ],
+      "required": [
+        "postId"
+      ]
+    },
+    {
+      "name": "posts_import_csv",
+      "scope": "posts:write",
+      "readOnly": false,
+      "arguments": [
+        "csv",
+        "dryRun",
+        "idempotencyKey"
+      ],
+      "required": [
+        "csv"
+      ]
+    },
+    {
+      "name": "posts_list",
+      "scope": "posts:read",
+      "readOnly": true,
+      "arguments": [
+        "limit",
+        "offset",
+        "platform",
+        "platformSetId",
+        "search",
+        "status"
+      ],
+      "required": []
+    },
+    {
+      "name": "posts_publish",
+      "scope": "posts:write",
+      "readOnly": false,
+      "arguments": [
+        "idempotencyKey",
+        "postId"
+      ],
+      "required": [
+        "postId"
+      ]
+    },
+    {
+      "name": "posts_retry",
+      "scope": "posts:write",
+      "readOnly": false,
+      "arguments": [
+        "accountIds",
+        "idempotencyKey",
+        "postId"
+      ],
+      "required": [
+        "postId"
+      ]
+    },
+    {
+      "name": "posts_unpublish",
+      "scope": "posts:write",
+      "readOnly": false,
+      "arguments": [
+        "accountIds",
+        "postId"
+      ],
+      "required": [
+        "postId"
+      ]
+    },
+    {
+      "name": "posts_update",
+      "scope": "posts:write",
+      "readOnly": false,
+      "arguments": [
+        "firstComment",
+        "linkUrl",
+        "media",
+        "mediaFit",
+        "options",
+        "postId",
+        "scheduledFor",
+        "targets",
+        "text",
+        "thread"
+      ],
+      "required": [
+        "postId"
+      ]
+    },
+    {
+      "name": "posts_validate",
+      "scope": "posts:read",
+      "readOnly": false,
+      "arguments": [
+        "firstComment",
+        "linkUrl",
+        "media",
+        "mediaFit",
+        "metadata",
+        "options",
+        "publishNow",
+        "scheduledFor",
+        "targets",
+        "text",
+        "thread",
+        "useQueue"
+      ],
+      "required": [
+        "targets"
+      ]
+    },
+    {
+      "name": "queue_get",
+      "scope": "posts:read",
+      "readOnly": true,
+      "arguments": [
+        "platformSetId"
+      ],
+      "required": [
+        "platformSetId"
+      ]
+    },
+    {
+      "name": "queue_slots",
+      "scope": "posts:read",
+      "readOnly": true,
+      "arguments": [
+        "count",
+        "filter",
+        "platformSetId"
+      ],
+      "required": [
+        "platformSetId"
+      ]
+    },
+    {
+      "name": "queue_update",
+      "scope": "posts:write",
+      "readOnly": false,
+      "arguments": [
+        "platformSetId",
+        "slots",
+        "timezone"
+      ],
+      "required": [
+        "platformSetId"
+      ]
+    },
+    {
+      "name": "webhooks_create",
+      "scope": "webhooks:write",
+      "readOnly": false,
+      "arguments": [
+        "description",
+        "events",
+        "idempotencyKey",
+        "url"
+      ],
+      "required": [
+        "events",
+        "url"
+      ]
+    },
+    {
+      "name": "webhooks_delete",
+      "scope": "webhooks:write",
+      "readOnly": false,
+      "arguments": [
+        "webhookId"
+      ],
+      "required": [
+        "webhookId"
+      ]
+    },
+    {
+      "name": "webhooks_deliveries_list",
+      "scope": "webhooks:write",
+      "readOnly": true,
+      "arguments": [
+        "limit",
+        "offset",
+        "webhookId"
+      ],
+      "required": [
+        "webhookId"
+      ]
+    },
+    {
+      "name": "webhooks_get",
+      "scope": "webhooks:write",
+      "readOnly": true,
+      "arguments": [
+        "webhookId"
+      ],
+      "required": [
+        "webhookId"
+      ]
+    },
+    {
+      "name": "webhooks_list",
+      "scope": "webhooks:write",
+      "readOnly": true,
+      "arguments": [
+        "limit",
+        "offset"
+      ],
+      "required": []
+    },
+    {
+      "name": "webhooks_redeliver",
+      "scope": "webhooks:write",
+      "readOnly": false,
+      "arguments": [
+        "deliveryId",
+        "webhookId"
+      ],
+      "required": [
+        "deliveryId",
+        "webhookId"
+      ]
+    },
+    {
+      "name": "webhooks_test",
+      "scope": "webhooks:write",
+      "readOnly": false,
+      "arguments": [
+        "webhookId"
+      ],
+      "required": [
+        "webhookId"
+      ]
+    },
+    {
+      "name": "webhooks_update",
+      "scope": "webhooks:write",
+      "readOnly": false,
+      "arguments": [
+        "description",
+        "enabled",
+        "events",
+        "rotateSecret",
+        "url",
+        "webhookId"
+      ],
+      "required": [
+        "webhookId"
+      ]
+    }
+  ],
+  "platformOptions": {
+    "instagram": [
+      "collaborators",
+      "coverUrl",
+      "firstComment",
+      "placement",
+      "shareToFeed",
+      "text",
+      "thumbOffset",
+      "userTags"
+    ],
+    "facebook": [
+      "firstComment",
+      "placement",
+      "text"
+    ],
+    "linkedin": [
+      "articleDescription",
+      "articleTitle",
+      "firstComment",
+      "isReshareDisabledByAuthor",
+      "text",
+      "videoTitle",
+      "visibility"
+    ],
+    "tiktok": [
+      "autoAddMusic",
+      "brandContentToggle",
+      "brandOrganicToggle",
+      "consent",
+      "disableComment",
+      "disableDuet",
+      "disableStitch",
+      "inboxDraft",
+      "isAigc",
+      "photoCoverIndex",
+      "privacyLevel",
+      "text",
+      "videoCoverTimestampMs"
+    ],
+    "threads": [
+      "firstComment",
+      "text",
+      "thread"
+    ],
+    "twitter": [
+      "firstComment",
+      "text",
+      "thread"
+    ],
+    "discord": [
+      "avatarUrl",
+      "embeds",
+      "poll",
+      "text",
+      "threadName",
+      "username"
+    ],
+    "telegram": [
+      "disableLinkPreview",
+      "disableNotification",
+      "parseMode",
+      "protectContent",
+      "sendAsDocument",
+      "text"
+    ],
+    "bluesky": [
+      "firstComment",
+      "text",
+      "thread"
+    ],
+    "youtube": [
+      "categoryId",
+      "containsSyntheticMedia",
+      "firstComment",
+      "madeForKids",
+      "notifySubscribers",
+      "playlistId",
+      "privacyStatus",
+      "tags",
+      "text",
+      "title"
+    ],
+    "pinterest": [
+      "boardId",
+      "text",
+      "title"
+    ]
+  }
+}

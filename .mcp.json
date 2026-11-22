@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ampost": {
+      "type": "http",
+      "url": "https://api.ampost.io/mcp"
+    }
+  }
+}

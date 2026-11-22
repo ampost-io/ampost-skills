@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "ampost",
+  "displayName": "Ampost",
+  "version": "0.1.0",
+  "description": "Post, schedule and analyze social media from Claude Code with Ampost: the hosted MCP server (OAuth sign-in) and skills for cross-posting, blog-to-social, a week of queued content, video repurposing, weekly analytics, account reconnects and CSV import",
+  "author": {
+    "name": "Ampost",
+    "email": "support@ampost.io",
+    "url": "https://ampost.io?ref=github"
+  },
+  "homepage": "https://ampost.io/docs/mcp?ref=github",
+  "repository": "https://github.com/ampost-io/ampost-skills",
+  "license": "MIT",
+  "keywords": [
+    "social media",
+    "scheduling",
+    "mcp",
+    "instagram",
+    "threads",
+    "youtube",
+    "bluesky",
+    "tiktok",
+    "analytics"
+  ],
+  "network": {
+    "hosts": [
+      "api.ampost.io",
+      "ampost.io"
+    ]
+  },
+  "icon": "./.claude-plugin/icon.png",
+  "documentationUrl": "https://ampost.io/docs/mcp?ref=github",
+  "supportUrl": "https://github.com/ampost-io/ampost-skills/issues",
+  "privacyPolicyUrl": "https://ampost.io/privacy?ref=github",
+  "termsOfServiceUrl": "https://ampost.io/tos?ref=github"
+}

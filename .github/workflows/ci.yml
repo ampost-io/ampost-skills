@@ -1,0 +1,36 @@
+# CI for this repo once it lives at github.com/ampost-io/ampost-skills. While the code is in the
+# Ampost app repo (public-repos/ampost-skills), the root workflow .github/workflows/public-repos.yml
+# runs instead, and also checks test/mcp-tools.json and the examples against the server code.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Skills and plugin manifests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm test
+      - name: Claude Code's plugin validator
+        run: npx --yes @anthropic-ai/claude-code plugin validate --strict .
+      - name: The skills CLI finds all seven skills
+        run: |
+          npx --yes skills add . --list > "$RUNNER_TEMP/skills.txt" 2>&1
+          for skill in skills/*/; do
+            grep -q "$(basename "$skill")" "$RUNNER_TEMP/skills.txt" || { cat "$RUNNER_TEMP/skills.txt"; exit 1; }
+          done

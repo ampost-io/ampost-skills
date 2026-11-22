@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "ampost-skills",
+  "description": "Ampost for Claude Code: the Ampost MCP server and skills to post, schedule, repurpose and report on social media",
+  "owner": {
+    "name": "Ampost",
+    "email": "support@ampost.io",
+    "url": "https://ampost.io?ref=github"
+  },
+  "plugins": [
+    {
+      "name": "ampost",
+      "source": "./",
+      "description": "Post to Instagram, Facebook, Threads, X, YouTube, Pinterest, Bluesky, Telegram and Discord from Claude Code: the Ampost MCP server plus skills for cross-posting, blog-to-social, a week of queued content, video repurposing, weekly analytics, account reconnects and CSV import",
+      "category": "productivity"
+    }
+  ]
+}
